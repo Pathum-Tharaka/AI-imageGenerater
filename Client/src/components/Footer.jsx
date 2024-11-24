@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { assets } from '../assets/assets';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -35,7 +36,12 @@ const Footer = () => {
   };
 
   return (
-    <div className="mt-20">
+    <motion.div 
+    initial={{ opacity: 0.2, y: 100 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    viewport={{ once: true }}
+    className="mt-20">
       <div className="bg-neutral-800 text-white py-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -169,7 +175,7 @@ const Footer = () => {
           ↑
         </button>
       )}
-    </div>
+    </motion.div>
   );
 };
 

@@ -88,7 +88,7 @@ const  userCredits = async (req, res) => {
 
         const {userId} = req.body;
 
-        const user = await userModel.findById(userID);
+        const user = await userModel.findById(userId);
         res.json({success: true, credits: user.creditBalance, user:{name: user.name}});
 
     }

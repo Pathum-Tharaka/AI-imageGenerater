@@ -4,6 +4,7 @@ import cors from "cors";
 
 import connectDB from "./config/mongodb.js";
 import userRouter from "./routes/userRoutes.js";
+import imageRouter from "./routes/imageRoutes.js";
 
 
 
@@ -16,6 +17,7 @@ app.use(express.json());
 await connectDB();
 
 app.use('/api/user', userRouter);
+app.use('/api/image', imageRouter);
 app.get('/', (req, res) => res.send('API is running'));
 
 
